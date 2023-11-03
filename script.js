@@ -1,19 +1,14 @@
 fetch('leaderboard.json')
     .then(response => response.json())
     .then(data => {
-        const leaderboardContainer = document.getElementById('leaderboard-container');
+        const leaderboard = document.getElementById('leaderboard');
 
-        // Sort the data based on scores
         data.sort((a, b) => b.score - a.score);
 
-        // Generate HTML for the leaderboard
-        let leaderboardHTML = '<ol>';
         data.forEach((entry, index) => {
-            leaderboardHTML += `<li>${index + 1}. ${entry.name} - ${entry.score}</li>`;
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${index + 1}. <span>${entry.name}</span> - <span>${entry.score}</span>`;
+            leaderboard.appendChild(listItem);
         });
-        leaderboardHTML += '</ol>';
-
-        // Set the generated HTML inside the container
-        leaderboardContainer.innerHTML = leaderboardHTML;
     })
     .catch(error => console.error('Error:', error));
