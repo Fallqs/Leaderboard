@@ -45,3 +45,14 @@ li span {
     font-weight: bold;
     margin-left: 10px;
 }
+
+li .name {
+    flex-grow: 1;
+    min-width: 50px;
+    text-align: center;
+}
+
+li .score {
+    min-width: 50px;
+    text-align: right;
+}
