@@ -7,7 +7,11 @@ fetch('leaderboard.json')
 
         data.forEach((entry, index) => {
             const listItem = document.createElement('li');
-            listItem.innerHTML = `${index + 1}. <span>${entry.name}</span> - <span>${entry.score}</span>`;
+            listItem.innerHTML = `
+                <span>${index + 1}.</span>
+                <span class="name">${entry.name}</span>
+                <span class="score">${entry.score}</span>
+            `;
             leaderboard.appendChild(listItem);
         });
     })
