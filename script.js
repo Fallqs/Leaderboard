@@ -8,7 +8,7 @@ fetch('leaderboard.json')
         data.forEach((entry, index) => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <span>${index + 1}.</span>
+                <span style="color: #FF7F50;">${index + 1}.</span>
                 <span class="name">${entry.name}</span>
                 <span class="score"><span style="color: #FF7F50;">${entry.score}</span> / ${entry.tot}</span>
             `;
