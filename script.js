@@ -10,7 +10,7 @@ fetch('leaderboard.json')
             listItem.innerHTML = `
                 <span>${index + 1}.</span>
                 <span class="name">${entry.name}</span>
-                <span class="score">${entry.score}</span>
+                <span class="score">${entry.score}/${entry.tot}</span>
             `;
             leaderboard.appendChild(listItem);
         });
