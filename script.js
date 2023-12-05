@@ -3,7 +3,7 @@ fetch('leaderboard.json')
     .then(data => {
         const leaderboard = document.getElementById('leaderboard');
 
-        data.sort((a, b) => b.score - a.score);
+        data.sort((a, b) => b.score != a.score? b.score - a.score : b.tot - a.tot);
 
         data.forEach((entry, index) => {
             const listItem = document.createElement('li');
